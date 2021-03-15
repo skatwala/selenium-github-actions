@@ -13,5 +13,6 @@ public class UserLoginTest extends TestBase {
         //System.out.println("Current URL is:" + driver.getCurrentUrl());
         //Assert.assertTrue(driver.getCurrentUrl().contains("Login"));
         Assert.assertTrue("Login Here".contains("Login"));
+        loginPage= new LoginPageObject(driver);
     }
 }
