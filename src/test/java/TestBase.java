@@ -46,23 +46,8 @@ public class TestBase {
 
     private void mongoDBSetup(){
         // Setup Mongo DB Connection
-        MongoClient mongoClient = new MongoClient(mongoDBServerURL, mongoDBPort);
-        MongoDatabase database = mongoClient.getDatabase(databaseName);
-        MongoCollection<Document> collection = database.getCollection(collectionName);
-        assertEquals(databaseName, database.getName());
-
-        // Create Document
-        Document doc = new Document("password", password)
-                .append("username", username);
-        collection.insertOne(doc);
-        ObjectId id = doc.getObjectId("_id");
-        System.out.println(id);
-
-        doc = collection.find(eq("_id", new ObjectId(id.toString())))
-                .first();
-        assert doc != null;
-        password = doc.get("password").toString();
-        username = doc.get("username").toString();
+        password = "SuperSecretPassword!";
+        username = "tomsmith";
         System.out.println(password);
         System.out.println(username);
     }
