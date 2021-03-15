@@ -14,5 +14,6 @@ public class UserLoginTest extends TestBase {
         //Assert.assertTrue(driver.getCurrentUrl().contains("Login"));
         Assert.assertTrue("Login Here".contains("Login"));
         loginPage= new LoginPageObject(driver);
+        Assert.assertTrue(driver.getCurrentUrl().contains("Login"));
     }
 }
